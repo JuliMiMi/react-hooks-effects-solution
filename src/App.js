@@ -3,11 +3,11 @@ import { React, useEffect, useState } from 'react';
 import './App.css';
 
 export default function App() {
-  const [appData, setAppData] = useState(localStorage.getItem('appData'));
+  const [appData, setAppData] = useState('');
 
-  localStorage.setItem('appData', appData);
-  // useEffect(() => {
-  // }, [appData]);
+   useEffect(() => {
+    setAppData(localStorage.getItem('appData'));
+  }, [localStorage.getItem('appData')]);
 
   return (
     <div>
