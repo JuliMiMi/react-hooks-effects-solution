@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 
 import './App.css';
 
 export default function App() {
-  const [appData, setAppData] = useState('');
+  const [appData, setAppData] = useState(localStorage.getItem('appData'));
 
-  useEffect(() => {
-    setAppData(localStorage.getItem('appData'));
-  }, []);
+  localStorage.setItem('appData', appData);
+  // useEffect(() => {
+  // }, [appData]);
 
   return (
     <div>
